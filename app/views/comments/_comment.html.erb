@@ -1,0 +1,27 @@
+
+<p>
+  <b>Commenter:</b>
+  <%= comment.commenterID %>
+</p>
+ 
+<p>
+  <b>Comment:</b>
+  <%= comment.body %>
+</p>
+
+<p>
+  <b>Comment Votes:</b>
+  <%= comment.commentVotes %>
+</p>
+
+
+<p>
+
+
+    <%= link_to 'Destroy Comment', comment_path(:postID => @post.id,:commentID => comment.id),
+              confirm: 'Are you sure?',:method => 'delete' %>
+
+  <%= link_to 'Vote Comment', comment_votes_path(:postID => @post.id,:commentID => comment.id),
+             :method => 'create'%>
+</p>
+
